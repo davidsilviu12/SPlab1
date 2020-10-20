@@ -1,27 +1,21 @@
-public class Image {
-    String imageName;
+public class Image implements Element
+{
+    protected String imageName;
 
-    public Image(String imageName) {
-        this.imageName=imageName;
-    }
-
-    public void Image(String imageName){
-        this.imageName=imageName;
+    public Image(String s)
+    {
+        this.imageName=s;
     }
 
-    public String getImageNameName() {
-        return imageName;
+    public String toString()
+    {
+        return "Image [imageName=" + imageName + "]";
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+
+    public void print()
+    {
+        System.out.println("Image name :" + this.imageName);
     }
 
-    @Override
-    public String toString() {
-        return "Image{" + "imageName=" + imageName + "}";
-    }
-    public void print(){
-        System.out.println(this.imageName);
-    }
 }

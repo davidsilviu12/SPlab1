@@ -1,22 +1,18 @@
-public class Paragraph{
-    public String text;
-    public Paragraph(String text){
-        this.text=text;
+public class Paragraph implements Element
+{
+    protected String text;
+
+    public Paragraph(String t)
+    {
+        this.text=t;
     }
 
-    @Override
     public String toString() {
-        return "Paragraph{" + "text='" + text + '\'' + "}";
+        return "Paragraph [text=" + text + "]";
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getText() {
-        return text;
-    }
-    public void print(){
-        System.out.println(this.text);
+    public void print()
+    {
+        System.out.println("Paragraph :" + this.text);
     }
 }

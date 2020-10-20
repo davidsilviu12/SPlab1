@@ -1,29 +1,21 @@
-public class Author {
-    public String name;
-    private Book book;
+public class Author
+{
+    protected String name;
 
-    public Author(String name) {
+    public Author(String name)
+    {
         this.name=name;
     }
 
-    public void Author(String name){
-        this.name=name;
+    public String toString()
+    {
+        return "Author [name=" + name + "]";
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void print()
 
-    @Override
-    public String toString() {
-        return "Author{" + "name=" + name + "}";
+    {
+        System.out.println("Author : " + this.name);
     }
-    public void print(){
-        System.out.println(this.name);
-    }
-
 }
