@@ -1,18 +1,13 @@
-public class Paragraph implements Element
-{
-    protected String text;
+public class Paragraph implements Element{
 
-    public Paragraph(String t)
-    {
-        this.text=t;
+    private String name;
+
+    Paragraph(String name){
+        this.name=name;
     }
 
-    public String toString() {
-        return "Paragraph [text=" + text + "]";
+    public void print(){
+        System.out.println("Paragraph with name: "+this.name);
     }
 
-    public void print()
-    {
-        System.out.println("Paragraph :" + this.text);
-    }
 }

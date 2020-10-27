@@ -1,39 +1,32 @@
 import java.util.ArrayList;
 
-public class Section implements Element
+public class Section implements Element{
 
-{
-    protected String title;
-    ArrayList<Element> sectiune = new ArrayList<>();
+    protected String sectionTitle;
+    protected ArrayList<Element> content = new ArrayList<>();
 
-
-    public Section(String t)
-    {
-        this.title=t;
+    Section(String sectionTitle){
+        this.sectionTitle=sectionTitle;
     }
 
-    public void add(Element e)
-    {
-        sectiune.add(e);
+    public int add(Element elm){
+        content.add(elm);
+        return content.indexOf(elm);
     }
 
-    public Element getElemet(int index )
-    {
-        return sectiune.get(index);
+    public void remove(Element elm){
+        content.remove(elm);
     }
 
-    public void print()
-    {
-        System.out.println("Titlu" + title );
-        for(Element e: sectiune)
-        {
-            e.print();
+    public Element getElement(int index){
+        return content.get(index);
+    }
+
+    public void print(){
+        System.out.println("Section: "+this.sectionTitle);
+        for(Element i : content){
+            i.print();
         }
     }
 
-
-    public void remove(Element e)
-    {
-        sectiune.remove(e);
-    }
 }
