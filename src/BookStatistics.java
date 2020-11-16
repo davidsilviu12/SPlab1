@@ -6,6 +6,11 @@ public class BookStatistics implements Visitor{
     public void visit(Image image){imagesCounter++;}
     public void visit(ImageProxy imageProxy){imagesCounter++;}
 
+    @Override
+    public void visit(Section s) {
+
+    }
+
     public void visit(Paragraph paragraph){paragraphsCounter++;}
 
     public void visit(Table table){tablesCounter++;}
