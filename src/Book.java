@@ -32,4 +32,12 @@ public class Book{
         }
     }
 
+    public void accept(Visitor v) {
+
+        v.visit(this);
+        for (Element i:content){
+            i.accept(v);
+        }
+    }
+
 }

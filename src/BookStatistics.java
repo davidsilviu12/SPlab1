@@ -1,25 +1,38 @@
-public class BookStatistics implements Visitor{
-    private int imagesCounter = 0;
-    private int tablesCounter = 0;
-    private int paragraphsCounter = 0;
+public class BookStatistics implements Visitor {
 
-    public void visit(Image image){imagesCounter++;}
-    public void visit(ImageProxy imageProxy){imagesCounter++;}
+    int paragraphs=0,sections=0,imageproxy=0,images=0,tables=0,book=0;
+
+    @Override
+    public void visit(Book b) {
+        book++;
+    }
 
     @Override
     public void visit(Section s) {
-
+        sections++;
     }
 
-    public void visit(Paragraph paragraph){paragraphsCounter++;}
+    @Override
+    public void visit(Paragraph p) {
+        paragraphs++;
+    }
 
-    public void visit(Table table){tablesCounter++;}
+    @Override
+    public void visit(ImageProxy ip) {
+        imageproxy++;
+    }
+
+    @Override
+    public void visit(Image i) {
+        images++;
+    }
+
+    @Override
+    public void visit(Table t) {
+        tables++;
+    }
 
     public void printStatistics(){
-        System.out.println("Book Statistics: ");
-        System.out.println("**** number of images: " + imagesCounter);
-        System.out.println("**** number of tables: " +tablesCounter);
-        System.out.println("*** number of paragraphs: "+ paragraphsCounter);
+        System.out.println("Books: "+book+"\nSections: "+sections+"\nparagraphs: "+paragraphs+"\nimages: "+images+"\nimageproxy: "+imageproxy+"\ntables: "+tables);
     }
-
 }

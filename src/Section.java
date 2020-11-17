@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Section implements Element{
@@ -37,5 +36,4 @@ public class Section implements Element{
             i.print();
         }
     }
-
 }
